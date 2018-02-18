@@ -45,7 +45,7 @@ public class KnightDriver
         int columns = Integer.parseInt(JOptionPane.showInputDialog(null,"How many columns of stars is the knight observing?","Star Columns",JOptionPane.PLAIN_MESSAGE));
         stars.setColumns(columns);
 
-        String starArray = "";  //initialize starArray to empty string
+        StringBuilder starArray = new StringBuilder();  //initialize starArray to empty string
         int numRows = stars.getRows();
         int numCols = stars.getColumns();
         int rowCounter = 0;
@@ -56,15 +56,15 @@ public class KnightDriver
         {
             if ((rowCounter % 2) != 0) //if we're on an odd row
             {
-                starArray += " "; //add a space to the line
+                starArray.append(" "); //add a space to the line
             }
             while (colCounter != numCols)
             {
-                starArray += "* ";
+                starArray.append("* ");
                 ++colCounter;
             }
             colCounter = 0; //reset column counter
-            starArray += "\n"; //add newline
+            starArray.append("\n"); //add newline
             ++rowCounter; //increment row counter
         }
 
